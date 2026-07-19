@@ -89,7 +89,7 @@ export default function Contact() {
 
       const data = await res.json().catch(() => ({}));
 
-      if (!res.ok || data.ok !== true) {
+      if (!res.ok || (data.success !== true && data.ok !== true)) {
         console.error('Contact form submission failed.', {
           status: res.status,
           statusText: res.statusText,
